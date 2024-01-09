@@ -17,6 +17,9 @@ module.exports = {
                     presets: ['@babel/env'] 
                 }
             }
+        }, { // vamos adicionar mais um objeto nas regras
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
     },
     devtool: 'source-map'

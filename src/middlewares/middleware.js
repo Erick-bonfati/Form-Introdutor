@@ -2,6 +2,7 @@
 exports.middleWareGlobal = (req, res, next) => {
     res.locals.errors = req.flash('errors'); // exibe icone vermelho de erro
     res.locals.success = req.flash('success'); // exibe icone verde de sucesso
+    res.locals.user = req.session.user; // exibe uma seção para exibir o usuario logado
     next();
 }
 
