@@ -6,10 +6,6 @@ exports.middleWareGlobal = (req, res, next) => {
     next();
 }
 
-exports.outroMiddleware = (req, res, next) => {
-    next();
-}
-
 exports.checkCsrfError = (err, req, res, next) => { // Qualquer erro que ocorrer ele não vai exibir a aplicaçaõ e vai exibir a página de erro
     if (err) {
         return res.render('404');
@@ -21,11 +17,10 @@ exports.csrfMiddleware = (req, res, next) => { //Importando o token para todas a
     next();
 }
 
-//Verificando se o usuario está logado ou não, se ele não estiver vai exibir uma mensagem de erro ao tentar acessar os contatos...
+//Verificando se o usuario está logado ou não.
 exports.loginRequired = (req, res, next) => {
     if (!req.session.user) {
         req.flash('errors', 'Você precisar fazer login.')
-        //Sempre antes de redirecionar uma página é importante salvarmos ela, para garantir que ela foi salva
         req.session.save(() => res.redirect('/homeContatos/index'));
         return;
     }

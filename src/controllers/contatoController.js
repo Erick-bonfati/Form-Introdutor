@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
         }
 
         req.flash('success', 'Contato registrado com sucesso')
-        req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`)); // Redireciona diretamente para onde o novo contato foi criado
+        req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`));
         return;
 
     } catch(e) {
@@ -29,27 +29,27 @@ exports.register = async (req, res) => {
 
 // Exportando uma função para poder editar os contatos criados
 exports.editIndex = async function(req, res) {
-    if(!req.params.id) return res.render('404'); // se não receber um id aqui ele vai retornar uma página de erro
+    if(!req.params.id) return res.render('404');
     
-    const contato = await Contato.buscaPorId(req.params.id); // aqui estamos chamando uma promise para validar se o id é uma string
+    const contato = await Contato.buscaPorId(req.params.id);
     
-    if(!contato) return res.render('404'); // se o usuario não existir vamos renderizar uma página de erro
+    if(!contato) return res.render('404');
 
     res.render('contato', { contato });
 }
 
-//Exporantdo uma função para atualizar os contatos já criados
+//Exportando uma função para atualizar os contatos já criados
 exports.edit = async function(req, res) {
 
     try {
         if(!req.params.id) return res.render('404');
 
-        const contato = new Contato(req.body); // chamando o corpo do contato
-        await contato.edit(req.params.id) // chamando os parametros do id, do método que criamos no model, isso para saber qual contato vamos att...
+        const contato = new Contato(req.body); 
+        await contato.edit(req.params.id) 
     
         if(contato.errors.length > 0) {
             req.flash('errors', contato.errors)
-            req.session.save(() => res.redirect(`/contato/index/${req.params.id}`)); // caso tiver erros ele volta para a edição do contato...
+            req.session.save(() => res.redirect(`/contato/index/${req.params.id}`)); 
             return;
         }
     
