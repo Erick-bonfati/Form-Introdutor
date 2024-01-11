@@ -4,6 +4,7 @@ const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
 const contatoController = require('./src/controllers/contatoController')
 const homeContato = require('./src/controllers/homeContato')
+const passwordGenController = require('./src/controllers/passwordGenController')
 
 const { loginRequired } = require('./src/middlewares/middleware')
 
@@ -27,5 +28,9 @@ route.post('/contato/register', loginRequired, contatoController.register);
 route.get('/contato/index/:id', loginRequired, contatoController.editIndex);
 route.post('/contato/edit/:id', loginRequired, contatoController.edit);
 route.get('/contato/delete/:id', loginRequired, contatoController.delete);
+
+//Rota do gerador de senhas
+route.get('/geradorSenha/index', passwordGenController.index);
+
 
 module.exports = route;
