@@ -3,11 +3,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background-color: aquamarine;
 }
   
 .container {
     flex: 1;
-    /* Adicione estilos adicionais para o seu conteúdo se necessário */
 }
   
 .link-projects {
@@ -21,14 +21,14 @@ body {
     transition: 1s;
     font-size: 1em;
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 15px;
 }
 
 .link-projects:hover {
     text-decoration: none;
-    color: rgb(70, 70, 78);
-    font-size: 1.1em;
+    color: rgb(7, 66, 47);
+    background-color: rgb(44, 182, 136);
 }
 
 h2 {
@@ -37,6 +37,7 @@ h2 {
     display: flex;
     font-weight: 600;
     color: rgb(0, 0, 0);
+    font-family: 'cursive', 'Bradley Hand', cursive;
 }
 
 p {
@@ -44,6 +45,7 @@ p {
     font-size: 1em;
     font-style: inherit;
     color: black;
+    font-family: 'cursive', 'Apple Chancery', cursive;
 }
 
 h1 {
@@ -53,6 +55,7 @@ h1 {
     align-items: center;
     display: flex;
     color: black;
+    font-family: 'cursive', 'Bradley Hand', cursive;
 }
 
 .introduction {
@@ -66,6 +69,7 @@ h1 {
     color: white;
     font-weight: 500;
     transition: 2s;
+    font-family: 'cursive', 'Bradley Hand', cursive;
 }
 
 
@@ -80,17 +84,17 @@ h1 {
 .navbar-brand {
     color: white;
     font-weight: 700;
-    font-style: italic;
+    font-family: 'cursive', 'Bradley Hand', cursive;
     font-size: 1.3em;
     transition: 1s;
 }
 
 .navbar-brand:hover {
-    color: rgb(102, 100, 100)
+    color: rgb(44, 182, 136)
 }
 
 .navbar-brand:active {
-    color: rgb(102, 100, 100)
+    color: rgb(44, 182, 136)
 }
 
 .navbar {
@@ -118,15 +122,6 @@ h1 {
 
 .nav-footer:active {
     color: white;
-}
-
-.nav-item .footer {
-    color: white;
-}
-
-.nav-item .footer:hover {
-    text-decoration: underline;
-    color: black;
 }
 
 .contact {
@@ -175,4 +170,54 @@ h1 {
 
 .excluir:hover {
     text-decoration: none;
+}
+
+.btn-primary {
+    background-color: rgb(15, 112, 80);
+    border: none;
+    transition: 0.5s;
+    font-family: 'cursive', 'Apple Chancery', cursive;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: rgb(6, 85, 59);
+}
+
+.msg-erro {
+    font-weight: 600;
+}
+
+.alert-danger {
+    font-weight: 900;
+    font-family: 'cursive', 'Bradley Hand', cursive;
+    align-items: center;
+}
+
+.alert-success {
+    font-weight: 900;
+    font-family: 'cursive', 'Bradley Hand', cursive;
+    align-items: center;
+    background-color: rgb(31, 151, 111);
+    color: rgb(79, 252, 87);
+}
+
+.nav-item .entrar {
+    color: black;
+}
+
+.nav-entrar {
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: 'cursive', 'Bradley Hand', cursive;
+    transition: 1s;
+    background: aquamarine;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+}
+
+.nav-entrar:hover {
+    background-color: rgb(44, 182, 136);
+    color: rgb(7, 66, 47);
 }
