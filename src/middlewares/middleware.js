@@ -21,7 +21,7 @@ exports.csrfMiddleware = (req, res, next) => { //Importando o token para todas a
 exports.loginRequired = (req, res, next) => {
     if (!req.session.user) {
         req.flash('errors', 'Você precisar fazer login.')
-        req.session.save(() => res.redirect('/homeContatos/index'));
+        req.session.save(() => res.redirect('/'));
         return;
     }
 
