@@ -1,4 +1,15 @@
-
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+  
+.container {
+    flex: 1;
+    /* Adicione estilos adicionais para o seu conteúdo se necessário */
+}
+  
 .link-projects {
     color: black;
     font-style: italic;
@@ -89,8 +100,7 @@ h1 {
 .navbar-footer {
     background-color: rgba(0, 0, 0, 0.8);
     height: 70px;
-    margin: 0;
-    position: relative;
+    padding: 10px;
 }
 
 .nav-footer {
